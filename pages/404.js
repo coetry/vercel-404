@@ -1,5 +1,13 @@
-export default function NotFound() {
-  return (
-    <h1>{"Not Found - 404"}</h1>
-  );
-}
+export default function NotFound({ content }) {
+   return (
+     <h1>{content.title}</h1>
+   );
+ }
+
+ export async function getStaticProps() {
+   return {
+     props: {
+       content: { title: "404" },
+     },
+   };
+ }
